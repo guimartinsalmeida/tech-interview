@@ -58,13 +58,13 @@ export const getGenderDemographicsData = (analyticsData) => ({
   ]
 });
 
-// Filtra dados de Vistas de Página
+
 export const filterPageViewsData = (data, startDate, endDate) => {
   if (!data) return [];
   return data.filter(view => new Date(view.fecha) >= new Date(startDate) && new Date(view.fecha) <= new Date(endDate));
 };
 
-// Filtra dados de Sessões
+
 export const filterSessionsData = (data, startDate, endDate, minSessions, maxBounceRate) => {
   if (!data) return [];
   return data.filter(session => {
@@ -76,15 +76,15 @@ export const filterSessionsData = (data, startDate, endDate, minSessions, maxBou
   });
 };
 
-// Filtra dados de Demografia por Idade
+
 export const filterAgeDemographicsData = (data) => {
   if (!data) return [];
-  return data; // Aqui você pode adicionar lógica adicional se necessário
+  return data; 
 };
 
-// Filtra dados de Demografia por Gênero
+
 export const filterGenderDemographicsData = (data) => {
   if (!data) return [];
-  return data; // Aqui você pode adicionar lógica adicional se necessário
+  return data; 
 };
 
