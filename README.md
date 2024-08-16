@@ -2,6 +2,13 @@
 
 Este proyecto es un panel de métricas de Google Ads desarrollado con React. Permite visualizar métricas como clics e impresiones a través de gráficos interactivos, y ofrece la opción de generar datos aleatorios para visualización en caso de falla en la autenticación de Google.
 
+## Video de Demostración
+
+Mira el siguiente video para una demostración de la aplicación:
+
+[![Demo](https://img.youtube.com/vi/qZasMI78HQo/hqdefault.jpg)](https://youtu.be/qZasMI78HQo)
+
+
 ## Visita el Proyecto
 
 Puedes acceder al proyecto en vivo en: [https://tech-interview-beta.vercel.app/](https://tech-interview-beta.vercel.app/)
