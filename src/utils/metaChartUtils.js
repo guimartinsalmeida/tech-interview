@@ -1,5 +1,3 @@
-// utils.js
-
 export const getBarData = (adData) => ({
   labels: adData.map(ad => ad.nombre),
   datasets: [

@@ -1,5 +1,3 @@
-// src/utils/chartGoogleAdsUtils.js
-
 export const getChartData = (metrics) => ({
   labels: ['Impressions', 'Clicks'],
   datasets: [
