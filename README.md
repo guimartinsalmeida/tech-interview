@@ -6,7 +6,7 @@ Este proyecto es un panel de métricas de Google Ads desarrollado con React. Per
 
 Mira el siguiente video para una demostración de la aplicación:
 
-[![Demo](https://img.youtube.com/vi/qZasMI78HQo/hqdefault.jpg)](https://youtu.be/qZasMI78HQo)
+[![Demo](https://img.youtube.com/vi/qZasMI78HQo/maxresdefault.jpg)](https://youtu.be/qZasMI78HQo)
 
 
 ## Visita el Proyecto
