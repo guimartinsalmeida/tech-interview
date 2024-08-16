@@ -1,70 +1,100 @@
-# Getting Started with Create React App
+# Panel de Métricas de Google Ads
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este proyecto es un panel de métricas de Google Ads desarrollado con React. Permite visualizar métricas como clics e impresiones a través de gráficos interactivos, y ofrece la opción de generar datos aleatorios para visualización en caso de falla en la autenticación de Google.
 
-## Available Scripts
+## Visita el Proyecto
 
-In the project directory, you can run:
+Puedes acceder al proyecto en vivo en: [https://tech-interview-beta.vercel.app/](https://tech-interview-beta.vercel.app/)
 
-### `npm start`
+## Instrucciones de Configuración
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. **Clona el Repositorio**
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+   ```bash
+   git clone https://github.com/tu-usuario/tu-repositorio.git
+   cd tu-repositorio
+2. **Instala las Dependencias**
+   ```bash
+   npm install
 
-### `npm test`
+3. **Crea un archivo .env en la raíz del proyecto y agrega las siguientes variables con sus respectivos valores:**
+   ```bash
+    REACT_APP_GOOGLE_CLIENT_ID=tu_google_client_id
+    REACT_APP_GOOGLE_CLIENT_SECRET=tu_google_client_secret
+    REACT_APP_GOOGLE_AUTH_URL=https://accounts.google.com/o/oauth2/auth
+    REACT_APP_GOOGLE_TOKEN_URL=https://oauth2.googleapis.com/token
+    REACT_APP_GOOGLE_API_URL=https://googleads.googleapis.com/v17/
+    REACT_APP_GOOGLE_DEVELOPER_TOKEN=tu_google_developer_token
+    REACT_APP_GOOGLE_LOGIN_CUSTOMER_ID=tu_google_login_customer_id
+    REACT_APP_GOOGLE_CUSTOMER_ID=tu_google_customer_id
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+4. **Ejecuta el Proyecto**
+   ```bash
+   npm start
 
-### `npm run build`
+5. **Despliegue para Producción**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Para desplegar en una plataforma como Vercel, sigue las instrucciones específicas de la plataforma para conectar tu repositorio y configurar variables de entorno.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Explicación de las Elecciones de Diseño
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- React y React Router: Utilizamos React para construir la interfaz de usuario debido a su flexibilidad y eficiencia. React Router se usa para gestionar la navegación entre diferentes secciones de la aplicación, proporcionando una experiencia de usuario fluida.
 
-### `npm run eject`
+- Tailwind CSS: Optamos por usar Tailwind CSS para la estilización debido a su capacidad para crear diseños responsivos y modernos de manera rápida y eficiente.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Chart.js y react-chartjs-2: Para la visualización de datos, elegimos la biblioteca Chart.js junto con el wrapper react-chartjs-2, que ofrece gráficos interactivos y personalizables para mostrar métricas como clics e impresiones.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Hooks Personalizados: Utilizamos hooks personalizados para gestionar la autenticación de Google y la obtención de métricas, separando la lógica de negocio de la lógica de presentación y mejorando la organización del código.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- Almacenamiento Local: Utilizamos el localStorage para almacenar tokens de autenticación y métricas, asegurando que los datos persistan entre sesiones y no dependan únicamente de la memoria de ejecución.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+## Comentarios de Código
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- src/index.js: El punto de entrada de la aplicación React. Configura el QueryClientProvider para la gestión del estado de las solicitudes.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- src/hooks/useGoogleAuth.js: Hook responsable de la autenticación de Google. Genera la URL de autorización y maneja el callback de autenticación para almacenar tokens en localStorage.
 
-### Code Splitting
+- src/hooks/useFetchMetrics.js: Hook que maneja la obtención de métricas de Google Ads. Incluye lógica para manejar errores y almacenar métricas en localStorage.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- src/utils/chartGoogleAdsUtils.js: Funciones utilitarias para generar datos y opciones para los gráficos de Chart.js. Incluye lógica para crear gráficos basados en las métricas proporcionadas y definir opciones interactivas.
 
-### Analyzing the Bundle Size
+- src/components/GoogleAdsMetricsContent.js: Componente principal para mostrar el contenido de las métricas de Google Ads, incluidos gráficos y botones para acciones como "Authorize with Google" y "Generate Random Data".
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- src/services/metricsService.js: Contiene funciones para hacer llamadas a la API de Google Ads, incluida la lógica para obtener y actualizar métricas, y para manejar tokens de acceso.
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
+## Para obtener las credenciales de Google, sigue estos pasos:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Crea un Proyecto en Google Cloud Console:
 
-### Deployment
+- Visita Google Cloud Console.
+  Crea un nuevo proyecto o selecciona uno existente.
+   Habilita la API de Google Ads:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- Ve a la Biblioteca de API.
+  Busca "Google Ads API" y habilítala para tu proyecto.
+  Configura el Consentimiento de OAuth:
 
-### `npm run build` fails to minify
+- En el Panel de OAuth, configura la pantalla de consentimiento de OAuth.
+  Agrega la URL de redirección autorizada (por ejemplo, http://localhost:3000/oauth2callback).
+- Crea Credenciales de OAuth 2.0:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Ve a la sección Credenciales.
+Crea un nuevo ID de cliente de OAuth 2.0 y una clave secreta para aplicaciones web.
+Asegúrate de agregar las URL de redirección autorizadas.
+Obtén tu Token de Desarrollador de Google Ads:
+
+Sigue las instrucciones en la documentación de Google Ads para obtener el token de desarrollador y el ID del cliente.
+https://developers.google.com/google-ads/api/docs/start
+
+## Feedback
+
+Si tienes algun Feedback, just let me know guimartinsalmeida@gmail.com
+
+
+## Authors
+
+- Guilherme Martins
+
